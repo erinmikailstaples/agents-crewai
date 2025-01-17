@@ -15,3 +15,10 @@ reporting_task:
     A fully fledged report with the main topics, each with a full section of information.
     Formatted as markdown without '```'
   agent: reporting_analyst
+
+analyze_data_task:
+  description: >
+    Analyze the cleaned UFO data and generate a report on alien sightings.
+  expected_output: >
+    A detailed markdown report summarizing the findings from the UFO data as well as any conspiracy theories or further findings that may come up.
+  agent: data_analyst
