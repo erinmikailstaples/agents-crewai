@@ -2,7 +2,7 @@
 import sys
 import warnings
 
-from aliens.crew import Aliens
+from aliens.crew import SpaceAlienCrew
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -16,9 +16,9 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs'
+        'topic': 'space aliens and UFO sightings'
     }
-    Aliens().crew().kickoff(inputs=inputs)
+    SpaceAlienCrew().crew().kickoff(inputs=inputs)
 
 
 def train():
@@ -26,10 +26,10 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": "AI LLMs"
+        "topic": "space aliens and UFO sightings"
     }
     try:
-        Aliens().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        SpaceAlienCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -39,7 +39,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        Aliens().crew().replay(task_id=sys.argv[1])
+        SpaceAlienCrew().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -49,10 +49,10 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        "topic": "AI LLMs"
+        "topic": "space aliens and UFO sightings"
     }
     try:
-        Aliens().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        SpaceAlienCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
